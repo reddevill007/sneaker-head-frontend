@@ -1,16 +1,36 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
+
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400&family=Fauna+One&display=swap");
 
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #F6F6F6;
+}
+
+.verticle::-webkit-scrollbar {
+    height: 5px;
+}
+
+
+/* Handle */
+.verticle::-webkit-scrollbar-thumb {
+    background: gray;
+}
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: gray;
 }
