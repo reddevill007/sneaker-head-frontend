@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { useRouter } from 'next/router'
+import Head from 'next/head'
 import Items from '../../components/Items'
 import SideInfo from '../../components/itemdetails/SideInfo'
 import Showcase from '../../components/itemdetails/Showcase'
@@ -31,18 +32,18 @@ const ItemDetails = () => {
         setItems(itemJson.data);
     }
 
-    // const filteredItems = items.filter((item) => item.id !== id)
-
     useEffect(() => {
         if (router.isReady) {
             getItem();
             getItems();
-            // setItems(items.filter((item) => (id !== `${item.id}`)))
         }
     }, [id, router.isReady])
 
     return (
         <>
+            <Head>
+                <title>SNEAKER HEAD - {item.name}</title>
+            </Head>
             <div className='mt-16  w-full md:w-[calc(100%-400px)] p-5 md:p-10 font-cinzel'>
                 <SideInfo item={item} />
                 <Showcase item={item} />
