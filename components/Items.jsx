@@ -25,7 +25,7 @@ const Items = ({ item, width }) => {
 
 
     return (
-        <div className='min-w-[300px] min-h-[300px] border-black rounded font-fauna border'>
+        <div className='min-w-[300px] w-[300px] h-[300px] min-h-[300px] border-black rounded font-fauna border'>
             <div className="relative transition-all duration-1000 w-full h-full" onMouseOver={() => setIsHovered(true)} onMouseOut={() => setIsHovered(false)}>
                 <img
                     src={`http://localhost:1337${url}`}

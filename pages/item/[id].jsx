@@ -42,7 +42,7 @@ const ItemDetails = () => {
     return (
         <>
             <Head>
-                <title>SNEAKER HEAD - {item.name}</title>
+                <title>SNEAKER HEAD - {item?.attributes?.name}</title>
             </Head>
             <div className='mt-16  w-full md:w-[calc(100%-400px)] p-5 md:p-10 font-cinzel'>
                 <SideInfo item={item} />
