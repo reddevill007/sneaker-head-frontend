@@ -22,15 +22,15 @@ const Detail = () => {
                     <div className='bg-white text-black w-1/2 border p-4 border-gray-700 text-center border-b-0'>Name and Address of Importer</div>
                     <div className='bg-gray-200 text-black w-1/2 border p-4 border-gray-700 text-center border-l-0 border-b-0'>Sneaker Head India Marketing Private Limited, Office no. 6, 2nd Floor, Sector-B, Pocket no. 7, Plot no. 11, Vasant Kunj, New Delhi - 110070</div>
                 </div>
-                <div className='flex justify-center items-center w-full'>
+                <div className='flex justify-center w-full'>
                     <div className='bg-white text-black w-1/2 border p-4 border-gray-700 text-center border-b-0'>Net Quantity</div>
                     <div className='bg-gray-200 text-black w-1/2 border p-4 border-gray-700 text-center border-l-0 border-b-0'>One Pair</div>
                 </div>
-                <div className='flex justify-center items-center w-full'>
+                <div className='flex justify-center w-full'>
                     <div className='bg-white text-black w-1/2 border p-4 border-gray-700 text-center border-b-0'>Gender</div>
                     <div className='bg-gray-200 text-black w-1/2 border p-4 border-gray-700 text-center border-l-0 border-b-0'>Male</div>
                 </div>
-                <div className='flex justify-center items-center w-full'>
+                <div className='flex justify-center w-full'>
                     <div className='bg-white text-black w-1/2 border p-4 border-gray-700 text-center'>Country of Origin</div>
                     <div className='bg-gray-200 text-black w-1/2 border p-4 border-gray-700 text-center border-l-0'>India</div>
                 </div>

@@ -12,7 +12,7 @@ const SideInfo = ({ item }) => {
 
     return (
         <>
-            <div className='fixed right-0 top-16 h-[calc(100vh-64px)] bg-white w-[400px] text-black p-5 font-cinzel md:block hidden'>
+            <div className='fixed right-0 top-16 h-[calc(100vh-64px)] overflow-y-scroll bg-white w-[400px] text-black p-5 font-cinzel md:block hidden'>
                 <div className='flex items-center justify-between w-full mb-3'>
                     <div>Men.Orignal</div>
                     <div>&#9733;4.9</div>
