@@ -50,7 +50,7 @@ const ItemDetails = () => {
                 <Description item={item} />
                 <Detail />
                 <h3 className='text-3xl font-bold mb-3'>You May Also Like</h3>
-                <div className='flex overflow-x-scroll gap-10 p-3 mb-16 md:pb-10 verticle'>
+                <div className='flex overflow-x-scroll overflow-y-hidden gap-10 p-7 mb-16 md:pb-10 verticle'>
                     {items.map((item, i) => {
                         if (id !== `${item.id}`) {
                             return <Items item={item} key={`${item.name}-${i}`} />

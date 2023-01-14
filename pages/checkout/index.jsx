@@ -4,6 +4,11 @@ import { Formik } from 'formik'
 import * as yup from 'yup'
 import Payment from '../../components/checkout/Payment'
 import Shipping from '../../components/checkout/Shipping'
+import { loadStripe } from '@stripe/stripe-js'
+
+const stripePromise = loadStripe(
+    "pk_test_51MPdxVSBIBbCCoMm4a9nvnkFhVApgqtep9b53gWSwSu9qmy9AWMp45KQ31GuRHJPHc3YfThzGfUzT2cmP8pwSTcP005hecK0ls"
+)
 
 const Checkout = () => {
     const [activeStep, setActiveStep] = useState(0);
@@ -29,7 +34,30 @@ const Checkout = () => {
         action.setTouched({})
     }
 
-    async function makePayment(values) { }
+    async function makePayment(values) {
+        const stripe = await stripePromise;
+        const requestBody = {
+            userName: [values.firstName, values.lastName].join(" "),
+            email: values.email,
+            product: cart.map(({ id, count }) => ({
+                id,
+                count,
+            }))
+        };
+
+        const res = await fetch("http://localhost:1337/api/orders", {
+            method: "POST",
+            header: { "Content-Type": "application/json" },
+            body: JSON.stringify(requestBody)
+        });
+
+        const session = await res.json();
+        await stripe.redirectToCheckout({
+            sessionId: session.id
+        })
+    }
+
+    console.log(activeStep)
 
     return (
         <div className='mt-16'>
@@ -70,10 +98,10 @@ const Checkout = () => {
                         )}
 
                         <div>
-                            {isSecondStep && (
-                                <button onClick={setActiveStep(activeStep - 1)} className='border p-4'>Back</button>
+                            {isFirstStep && (
+                                <button onClick={() => setActiveStep(activeStep - 1)} className='border p-4'>Back</button>
                             )}
-                            <button type='submit' className='border p-4'>{isFirstStep ? "Next" : "Place Order"}</button>
+                            <button type='submit' onClick={() => handleFormSubmit} className='border p-4'>{!isSecondStep ? "Next" : "Place Order"}</button>
                         </div>
                     </form>
                 )}
